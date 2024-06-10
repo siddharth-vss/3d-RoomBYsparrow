@@ -17,7 +17,7 @@ module.exports = merge(
         devServer:
         {
             host: 'local-ip',
-            port: portFinderSync.getPort(8080),
+            port: portFinderSync.getPort(1234),
             open: true,
             https: false,
             allowedHosts: 'all',
@@ -39,8 +39,8 @@ module.exports = merge(
                 const port = devServer.options.port
                 const https = devServer.options.https ? 's' : ''
                 const localIp = ip.v4.sync()
-                const domain1 = `http${https}://${localIp}:${port}`
-                const domain2 = `http${https}://localhost:${port}`
+                const domain1 = `http${https}://localhost:${port}`
+                const domain2 = `http${https}://${localIp}:${port}`
                 
                 console.log(`Project running at:\n  - ${infoColor(domain1)}\n  - ${infoColor(domain2)}`)
             }
